@@ -1,0 +1,45 @@
+CREATE TABLE attendance (
+    AttendanceID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    StudentID VARCHAR(100) NOT NULL,
+    StudentName VARCHAR(100) NOT NULL,
+    AttendanceDate DATE NOT NULL,
+    AttendanceTime TIME NOT NULL,
+    ClassType VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE class (
+    ClassID INT PRIMARY KEY NOT NULL,
+    Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE payment (
+    InvoiceID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    StudentID VARCHAR(100),
+    Student_name VARCHAR(100),
+    Class VARCHAR(100),
+    Month VARCHAR(100),
+    Amount FLOAT
+);
+
+CREATE TABLE student (
+    ID_Number VARCHAR(100) PRIMARY KEY NOT NULL,
+    Student_name VARCHAR(100) NOT NULL,
+    Phone_number VARCHAR(11) NOT NULL,
+    Address VARCHAR(100) NOT NULL,
+    School VARCHAR(100) NOT NULL,
+    DOB DATE NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    Guardian_name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Class VARCHAR(100) NOT NULL,
+    Payment_type VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE user (
+    UserID VARCHAR(100) PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Telephone VARCHAR(11) NOT NULL,
+    Username VARCHAR(100) NOT NULL,
+    Password VARCHAR(100) NOT NULL,
+    Role VARCHAR(100)
+);

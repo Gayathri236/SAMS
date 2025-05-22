@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Marking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="assets/Attendance.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <nav>
+    
+        <ul>
+          <li>
+            <div class="logo">
+              <i class="fas fa-bars"></i>
+            </div>
+          </li>
+    
+          <li>
+            <a href="dashboard.html">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="Student.html">
+              <i class="fas fa-address-card"></i>
+              <span class="nav-item">Student Registration</span>
+            </a>
+          </li>
+    
+          <li>
+            <a href="Attendance.html">
+              <i class="fas fa-qrcode"></i>
+              <span class="nav-item">Attendance Marks</span>
+            </a>
+          </li>
+          <li>
+            <a href="ViewAttendance.html">
+              <i class="fas fa-eye"></i>
+              <span class="nav-item">View Attendance</span>
+            </a>
+          </li>
+          <li>
+            <a href="Class.html">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Class Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="Payment.html">
+              <i class="fas fa-credit-card"></i>
+              <span class="nav-item">Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="Report.html">
+              <i class="fas fa-chart-line"></i>
+              <span class="nav-item">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="User.html">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">User Manage</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>NEXT LEVEL MATHS ATTENDANCE MANAGEMENT SYSTEM</h1>
+            <div class="date-time-class">
+                <label for="">Date :</label>
+                <input type="text" id="current-date" name="date" readonly />
+                <label for="">Time :</label>
+                <input type="text" id="current-time" name="time" readonly />
+                <label for="">Select Class</label>
+                <select id="class_type" name="class_type">
+                    <!-- Class options can be dynamically added here -->
+                </select>
+            </div>
+        </div>
+
+        <div class="attendance-main">
+            <!-- QR Scanner on the Left -->
+            <div class="qr-container">
+                <h2>Scan QR Code to Mark Attendance</h2>
+                <div id="reader"></div>
+                <div id="result"></div>
+            </div>
+
+            <!-- Scanned Details on the Right -->
+            <div class="details-container">
+                <h2>Scanned Details</h2>
+                <label for="student-id">ID Number:</label>
+                <input type="text" id="student-id" readonly />
+
+                <label for="student-name">Name:</label>
+                <input type="text" id="student-name" readonly />
+
+                <label for="student-class">Classes:</label>
+                <input type="text" id="student-class" readonly />
+
+                <label for="payment-type">Payment Type:</label>
+                <input type="text" id="payment-type" readonly />
+
+                <button id="mark-attendance">Mark Attendance</button>
+            </div>
+        </div>
+
+        <!-- Mark Attendance Button -->
+
+        <div class="attendance-table">
+
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Class Type</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-body">
+                    <!-- Attendance rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+    
+    <script src="assets/Attendance.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="assets/Registration.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Check if there are URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Check if ID number exists to determine if we are in edit mode
+            if (urlParams.has('idnumber')) {
+                $('#editMode').val('true'); // Indicate we are in edit mode
+
+                // Populate the form fields
+                $('#idnumber').val(urlParams.get('idnumber'));
+                $('#name').val(urlParams.get('name'));
+                $('#phone').val(urlParams.get('phone'));
+                $('#address').val(urlParams.get('address'));
+                $('#school').val(urlParams.get('school'));
+                $('#birthday').val(urlParams.get('birthday'));
+                $('#gender').val(urlParams.get('gender'));
+                $('#guardianName').val(urlParams.get('guardianName'));
+                $('#email').val(urlParams.get('email'));
+                $('#paymentType').val(urlParams.get('paymentType'));
+            }
+        });
+
+        function downloadQRCode() {
+            // Implement your QR code download logic here
+            alert("Download QR Code functionality not yet implemented.");
+        }
+
+        function shareQRCode() {
+            // Implement your QR code share logic here
+            alert("Share QR Code functionality not yet implemented.");
+        }
+    </script>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="form-section">
+            <h2>Student Registration</h2>
+            <form id="studentForm">
+                <input type="hidden" id="editMode" name="editMode">
+                <label for="idnumber">ID Number:</label>
+                <input type="text" id="idnumber" name="idnumber" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="school">School:</label>
+                <input type="text" id="school" name="school" required>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="guardianName">Guardian Name:</label>
+                <input type="text" id="guardianName" name="guardianName" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="class_type">Class:</label>
+                <select id="class_type" name="class_type" multiple required>
+                    <!-- dynamically add options here -->
+                </select>
+                <small>Select multiple classes by holding down the Ctrl (Windows) or Command (Mac) key while clicking.</small>
+                <label for="paymentType">Payment Type:</label>
+                <select id="paymentType" name="paymentType" required>
+                    <option value="">Select Payment Type</option>
+                    <option value="Paid">Paid Card</option>
+                    <option value="Free">Free Card</option>
+                   
+                </select>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div class="qr-code-section">
+            <div class="id-card">
+                <h3>NEXT LEVEL MATHS ID Card</h3>
+                <div id="qrCodeContainer"></div>
+                <div class="student-info">
+                    <p>Index Number: <span id="studentIndex"></span></p>
+                    <p>Name: <span id="studentName"></span></p>
+                    <p>Class: <span id="studentClass"></span></p>
+                </div>
+            </div>
+            <div class="button-group">
+                <button onclick="downloadQRCode()">Download</button>
+                <button onclick="shareQRCode()">Share</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/Registration.js"></script>
+</body>
+</html>

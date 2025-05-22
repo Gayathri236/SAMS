@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ebebeb;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    display: inline-flex;
+    box-shadow: 0 2px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    min-width: 300px;
+    height: 400px;
+    background-position: center;
+    background: linear-gradient(#6d021a, #6d0219c3);
+    background-size: cover;
+}
+
+.logo img {
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
+.logo h2 {
+    padding: 10px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo p {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font: bold;
+    margin-top: 10%;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.signin {
+    width: 320px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+form label {
+    float: left;
+    margin: 25px 0px 0px 40px;
+}
+
+label {
+    font-size: 14px;
+}
+
+form select,
+form input,
+form button {
+    width: 200px;
+    height: 35px;
+    color: #000000;
+    background: #d6d4d4;
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+}
+
+form select {
+    appearance: none; /* Remove default arrow in select */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23000"><path d="M5.2 8.6L10 13.4l4.8-4.8H5.2z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+form select:focus,
+form input:focus {
+    background-color: #e2e2e2; /* Change background on focus */
+}
+
+.button {
+    background: #6d0219c3; 
+    font-size: 16px; 
+    padding: 0 50px;
+    margin: 20px; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+.button:hover {
+    background: rgb(0, 0, 0); 
+}
+
+/* Fix for button color on active state */
+.button:active {
+    background: #6d0219c3; /* Maintain original color when clicked */
+}
+
+.regi_link {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.regi_link p {
+    color: #555;
+    font-size: 16px;
+}
+
+.regi_link a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 0;
+}

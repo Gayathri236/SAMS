@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap'); 
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+body { 
+    background-color: #f3f4f6; 
+    font-family: Arial, sans-serif; 
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+}
+
+/* Sidebar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100%;
+    background-color: #050303;
+    color: #fff;
+    transition: width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding-top: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+nav:hover {
+    width: 240px;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    padding-top: 20px;
+}
+
+nav ul li {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #d3d3d3;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-item {
+    margin-left: 10px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+
+nav:hover .nav-item {
+    opacity: 1;
+}
+.fas{
+    margin-left: 20px;
+}
+.logo .fas{
+    font-size: 18px;
+    margin-right: 18px;
+}
+/* Container for everything */
+
+
+.container {
+    width: 70%;  /* You can adjust this percentage as needed */
+    max-width: 1200px;  /* Increased max-width for a larger container */
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-left: 250px;
+    width: calc(70% - 250px);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+nav:hover ~ .container{
+    margin-left: 270px;
+    width: calc(70% - 270px);
+}
+
+
+/* Header */
+h3 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Search Bar */
+#searchBar {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px; /* Increased space below the search bar */
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchBar:focus {
+    border-color: #4CAF50;
+    box-shadow: 0px 4px 12px rgba(0, 128, 0, 0.2);
+}
+
+/* Form Styling */
+#studentForm {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; /* Space below the form */
+}
+
+/* Add padding for form inputs */
+#studentForm input {
+    width: calc(100% - 24px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px; /* Space below each input */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.new-student-btn {
+    display: block;
+    padding: 12px;
+    margin-bottom: 15px; /* Space below the button */
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.new-student-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+.table-container {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto; /* Add vertical scroll */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px; /* Add space above the table */
+}
+
+table th, table td {
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+thead {
+    background-color: #f4f6f8;
+    font-weight: bold;
+    color: #555;
+}
+
+table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+    background-color: #f1f9f1;
+}
+
+/* Action Button Styling */
+.action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.update:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    #searchBar, .new-student-btn {
+        font-size: 0.9em;
+    }
+
+    table th, table td {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+
+    .action-btn {
+        font-size: 0.8em;
+    }
+}

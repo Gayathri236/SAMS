@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap'); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  color: #333;
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background-color: #111;
+  color: #fff;
+  transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding-top: 20px;
+  border-radius: 0 15px 15px 0;
+}
+
+nav:hover {
+  width: 260px;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+  padding-top: 20px;
+}
+
+nav ul li {
+  width: 100%;
+  text-align: left;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #d3d3d3;
+  font-size: 16px;
+  width: 100%;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-item {
+  margin-left: 20px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+nav:hover .nav-item {
+  opacity: 1;
+}
+
+.fas {
+  font-size: 18px;
+  margin-left: 20px;
+}
+.logo .fas{
+  font-size: 18px;
+  margin-left: 38px;
+}
+
+.container {
+  width: 100%;  /* You can adjust this percentage as needed */
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-left: 100px;
+  width: calc(100% - 100px);
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+nav:hover ~ .container{
+    margin-left: 270px;
+    width: calc(100% - 50px);
+    margin-right: 20px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.5em;
+  color: #333;
+}
+
+#searchBar {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchBar:focus {
+  border-color: #4caf50;
+  box-shadow: 0px 4px 12px rgba(0, 128, 0, 0.2);
+}
+
+.new-student-btn {
+  display: inline-block; /* Changed from block to inline-block */
+  width: 150px; /* Adjust width as needed */
+  padding: 10px;
+  margin: 15px 0;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Positioned to the left */
+}
+
+.new-student-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Scrollable Table */
+.table-container {
+  max-height: 400px; 
+  overflow-y: auto;
+  width: 100%;
+  
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 5px;
+  width: 1800px;
+}
+
+table th, table td {
+  padding: 5px; /* Reduced padding */
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.8em;
+
+}
+
+thead {
+  background-color: #f4f6f8;
+  font-weight: bold;
+  color: #555;
+}
+
+table tbody tr {
+  transition: background-color 0.3s ease;
+  
+}
+
+table tbody tr:hover {
+  background-color: #f1f9f1;
+}
+
+/* Action Button Styling */
+.action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update {
+  background-color: #4c4caf;
+  color: white;
+}
+
+.update:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.delete {
+  background-color: #f44336;
+  color: white;
+  width: 50px;
+}
+
+.delete:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+/* Add this to your existing CSS */
+.expanded {
+  max-width: 1400px; /* Increased size on click */
+  transition: max-width 0.3s ease-in-out; /* Smooth transition */
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
+  }
+  #searchBar,
+  .new-student-btn {
+    font-size: 0.9em;
+  }
+  table th,
+  table td {
+    font-size: 0.6em;
+    padding: 15px;
+  }
+  .action-btn {
+    font-size: 0.8em;
+  }
+}

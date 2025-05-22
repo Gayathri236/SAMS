@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/Payment.css">
+</head>
+
+<body>
+    <nav>
+    
+        <ul>
+          <li>
+            <div class="logo">
+              <i class="fas fa-bars"></i>
+            </div>
+          </li>
+    
+          <li>
+            <a href="dashboard.html">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="Student.html">
+              <i class="fas fa-address-card"></i>
+              <span class="nav-item">Student Registration</span>
+            </a>
+          </li>
+    
+          <li>
+            <a href="Attendance.html">
+              <i class="fas fa-qrcode"></i>
+              <span class="nav-item">Attendance Marks</span>
+            </a>
+          </li>
+          <li>
+            <a href="ViewAttendance.html">
+              <i class="fas fa-eye"></i>
+              <span class="nav-item">View Attendance</span>
+            </a>
+          </li>
+          <li>
+            <a href="Class.html">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Class Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="Payment.html">
+              <i class="fas fa-credit-card"></i>
+              <span class="nav-item">Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="Report.html">
+              <i class="fas fa-chart-line"></i>
+              <span class="nav-item">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="User.html">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">User Manage</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    <div class="container">
+        <center><h1>Payment Page</h1></center><br><br>
+               
+        <form id="payment-form">
+            <input type="text" id="search-student-id" placeholder="Enter Student ID">
+            <button type="button" class="button" id="search-button">Search</button>
+
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" required>
+
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" required>
+
+            <label for="payment-class">Select Class:</label>
+            <select id="payment-class" required></select>
+
+            <label for="payment-month">Select Month:</label>
+            <select id="payment-month" required>
+                <option value="">--Select Month--</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+
+            <label for="payment-amount">Payment Amount:</label>
+            <input type="number" id="payment-amount" required>
+
+            <button type="button" class="button" id="save-payment-button">Add Payment</button>
+        </form>
+        <!-- Receipt Section -->
+        <div id="receipt" class="receipt" style="display: none; margin-top: 20px;">
+            <h3>NEXT LEVEL MATHS</h3>
+            <p>MATALE, SRI LANKA</p>
+            <p>+94 70 125 3161</p><br>
+
+            <p><strong>Student ID:</strong> <span id="receipt-student-id"></span></p>
+            <p><strong>Student Name:</strong> <span id="receipt-student-name"></span></p>
+            <p><strong>Month:</strong> <span id="receipt-month"></span></p>
+            <p><strong>Class:</strong> <span id="receipt-class"></span></p>
+
+            <div class="line"></div>
+            <p><strong>Payment:</strong> <span id="receipt-payment-amount"></span></p>
+            <div class="line"></div><br>
+          
+            <p>!!! Thank You !!! <br> <br>
+              
+                System by NIBM 23.2 Tel:0760703013
+        
+            </p>
+
+            <button type="button" class="button" id="print-receipt-button">Print Receipt</button>
+        </div>
+
+       
+        
+    </div>
+        
+    </div>
+
+    <!-- Place script tag here -->
+    <script src="assets/Payment.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-size: auto;
+}
+
+body {
+    background: #f3f4f6;
+    color: #333;
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100%;
+    background-color: #050303;
+    color: #fff;
+    transition: width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding-top: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+nav:hover {
+    width: 240px;
+}
+
+/* Logo and Welcome Section */
+.logo {
+    text-align: left;
+    margin-left: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    transition: opacity 0.3s;
+}
+
+.welcome-message {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #d3d3d3;
+    font-size: 10px;
+}
+
+nav:hover .welcome-message {
+    opacity: 1;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    padding-top: 20px;
+}
+
+nav ul li {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #d3d3d3;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-item {
+    margin-left: 10px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+
+nav:hover .nav-item {
+    opacity: 1;
+}
+.fas{
+    margin-left: 20px;
+}
+
+/* Main content */
+.main {
+    margin-left: 90px;
+    padding: 20px;
+    width: calc(100% - 90px);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+nav:hover ~ .main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+}
+
+.attendance h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Card Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card1 {
+    background: #dc5c26;
+}
+
+.card2 {
+    background: #9e2f0f;
+}
+
+.card3 {
+    background: #f0ba52;
+}
+
+.card4 {
+    background: #f4dcb2;
+    color: #333;
+}
+
+.card .icon-box {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.card .card-content {
+    text-align: center;
+}
+
+/* Card8 - Fixed Position */
+.card8 {
+    position: fixed;
+    bottom: 20px;
+    left: 90px;
+    width: 100px;
+    height: auto;
+    background-color: #edf2f4;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    z-index: 100;
+    margin-left: 90px;
+    width: calc(33% - 90px);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+nav:hover ~ .card8{
+    margin-left: 200px;
+    width: calc(40% - 200px);
+}
+
+.card8 h3 {
+    font-size: 30px;
+    color: #333;
+    margin: 5px 0;
+   text-align: center;
+}
+.img5{
+    width: 320px;
+    height: auto;
+    border-radius: 15px;
+    
+    padding: 10px;
+
+}
+.content{
+    font-size: 15px;
+    color: #333;
+    margin: 5px 0;
+   text-align: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* chart */
+.chartBody {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center; 
+    display: flex;
+    position: relative; 
+    bottom: 20px;
+}
+
+.chart-container {
+    width: 450px; 
+    height: 300px; 
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    position: absolute; 
+    bottom: 5px; 
+    right: 150px; 
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+nav:hover ~ .chart-container {
+    margin-left: 200px;
+    width: calc(40% - 200px);
+}
+
+.chart-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .card8, .chart-container {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    nav {
+        width: 60px;
+    }
+    nav:hover {
+        width: 200px;
+    }
+    .main {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+    nav:hover ~ .main {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
